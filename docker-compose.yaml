@@ -1,0 +1,8 @@
+version: '3'
+services:
+  shinobi_exporter:
+    image:  vibin/shinobi_exporter:1635370712
+    container_name: shinobi_exporter
+    restart: always
+    ports:
+      - "8880:8080"
