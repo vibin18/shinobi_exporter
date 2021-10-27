@@ -60,7 +60,7 @@ func main() {
 
 	http.Handle("/metrics", promhttp.Handler())
 	http.HandleFunc("/hit", hitFunc)
-	log.Info("Starting shinobi_exporter on ", opts.ServerBind)
+	log.Infof("Starting shinobi_exporter on %s", opts.ServerBind)
 	if err := http.ListenAndServe(opts.ServerBind, nil); err != nil {
 		log.WithField("error", err).Fatal("listen and serve error")
 	}
